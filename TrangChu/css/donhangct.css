@@ -1,0 +1,9 @@
+.red-underline {
+    color: red; /* Thiết lập màu chữ là đỏ */
+    text-decoration: underline; /* Gạch chân */
+}
+.my-text{
+    color: green;
+    font-weight: bold;
+}
+
