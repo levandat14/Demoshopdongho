@@ -3,8 +3,9 @@
 	$dbUser = 'root';
 	$dbPassword = 'BjDQDkrAbzTfSyfYLhqNeyljauKFdVyn';
 	$dbName="railway";
+	$dbPort = 48011;
 
-	$conn = mysqli_connect($dbHost,$dbUser,$dbPassword,$dbName);
+	$conn = mysqli_connect($dbHost,$dbUser,$dbPassword,$dbName,$dbPort);
 
 	if($conn)
 	{
