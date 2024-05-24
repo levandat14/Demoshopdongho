@@ -1,4 +1,4 @@
 <?php
-header("Location: TrangChu/Index.php");
+header("Location: TrangChu/index.php");
 exit();
 ?>
