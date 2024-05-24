@@ -1,8 +1,8 @@
 <?php
-	$dbHost = 'localhost';
+	$dbHost = 'roundhouse.proxy.rlwy.net';
 	$dbUser = 'root';
-	$dbPassword = '';
-	$dbName="webdongho";
+	$dbPassword = 'BjDQDkrAbzTfSyfYLhqNeyljauKFdVyn';
+	$dbName="railway";
 
 	$conn = mysqli_connect($dbHost,$dbUser,$dbPassword,$dbName);
 
