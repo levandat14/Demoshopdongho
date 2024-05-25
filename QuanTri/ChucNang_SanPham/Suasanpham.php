@@ -7,13 +7,11 @@
 <script src="../ckeditor/ckeditor.js"></script>
 <link href="Site.css" rel="stylesheet" />
 <?php
+ob_start();
 require_once "../ketnoi/ketnoi.php";
 $sqlloaisp = "SELECT * FROM loaisp ";
 $queryloaisp = mysqli_query($conn, $sqlloaisp);
 
-?>
-
-<?php
 $sqlnsx = "SELECT * FROM nsx ";
 $querynsx = mysqli_query($conn, $sqlnsx);
 ?>
@@ -73,7 +71,7 @@ if (
     $querysp = mysqli_query($conn, $sqlsp);
     header('location: quantri.php?page_layout=danhsachsp');
 }
-
+ob_end_flush();
 ?>
 <form method="post" enctype="multipart/form-data" role="form">
     <div class="container">
