@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 // Kiểm tra không có đầu ra trước lệnh header
 if (!headers_sent()) {
-    header("Location: TrangChu/ChucNang_DangNhap/Dangnhap.php");
+    header("Location: TrangChu/ChucNang_Dangnhap/Dangnhap.php");
     exit;
 } else {
     echo "Cannot redirect, headers already sent!";
