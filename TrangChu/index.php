@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once('../ketnoi/ketnoi.php');
+require_once('../ketnoi/ketnoi.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
