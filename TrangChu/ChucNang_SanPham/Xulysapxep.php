@@ -1,10 +1,11 @@
 <?php
-$dbHost = 'localhost';
-$dbUser = 'root';
-$dbPassword = '';
-$dbName = "webdongho";
+	$dbHost = 'roundhouse.proxy.rlwy.net';
+	$dbUser = 'root';
+	$dbPassword = 'BjDQDkrAbzTfSyfYLhqNeyljauKFdVyn';
+	$dbName="railway";
+	$dbPort = 48011;
 
-$conn = mysqli_connect($dbHost, $dbUser, $dbPassword, $dbName);
+	$conn = mysqli_connect($dbHost,$dbUser,$dbPassword,$dbName,$dbPort);
 
 
 if (isset($_POST['sapxep'])) {

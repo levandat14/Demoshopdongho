@@ -8,13 +8,13 @@
   <link href="css/style.css" rel="stylesheet" />
   <?php
 
-        $dbHost = 'localhost';
+        $dbHost = 'roundhouse.proxy.rlwy.net';
         $dbUser = 'root';
-        $dbPassword = '';
-        $dbName="webdongho";
+        $dbPassword = 'BjDQDkrAbzTfSyfYLhqNeyljauKFdVyn';
+        $dbName="railway";
+        $dbPort = 48011;
 
-        $conn = mysqli_connect($dbHost,$dbUser,$dbPassword,$dbName);
-
+        $conn = mysqli_connect($dbHost,$dbUser,$dbPassword,$dbName,$dbPort);
         if($conn)
         {
             $setLang=mysqli_query($conn, "SET NAMES 'utf8'");
