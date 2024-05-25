@@ -16,7 +16,7 @@ if(isset($_POST['btnsubmit'])){
         // Thêm tài khoản vào cơ sở dữ liệu
         $sql = "INSERT INTO admin (TenDangNhap, MatKhau) VALUES ('$tk', '$hashed_password')";
         $query=mysqli_query($conn, $sql);
-        header('location: quantri.php?page_layout=dangkitkadmin');
+        echo 'window.location.href="quantri.php?page_layout=dangkitkadmin";';
     } else {
         // Nếu tài khoản đã tồn tại, hiển thị thông báo cho người dùng
         echo '<script>alert("Tài khoản đã tồn tại.");</script>';
