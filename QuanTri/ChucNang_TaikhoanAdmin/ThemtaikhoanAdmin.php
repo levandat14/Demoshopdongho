@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="css/themsp.css" />
 <?php
-
+ob_start();
 if(isset($_POST['btnsubmit'])){
     // Lấy dữ liệu từ biểu mẫu
     $tk=$_POST['txttaikhoan'];
@@ -22,7 +22,7 @@ if(isset($_POST['btnsubmit'])){
         echo '<script>alert("Tài khoản đã tồn tại.");</script>';
     }
 }
-
+ob_end_flush();
 ?>
 <h2>Thêm Tai Khoản Quản Lý</h2>
 <div id="main">
