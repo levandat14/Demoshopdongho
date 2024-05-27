@@ -43,7 +43,7 @@ if(isset($_POST['submit'])&&($_POST['submit'])){
 			$_SESSION['tkc']=$tk;
 			$_SESSION['mkc']=$mk_MaHoa;
 			echo '<script>alert("Qúy Khách Đã Đăng Nhập Thành Công!");
-			window.location.href="index.php";
+			window.location.href="../index.php";
 			</script>';
 		} 
 		// if(isset($_POST['check'])&&($_POST['check'])){
