@@ -4,15 +4,35 @@
 require_once("../ketnoi/ketnoi.php");
 if (isset($_POST['themloaisp'])) {
     $insertdulieu = $_POST['themloaisp'];
-    $sql = "INSERT INTO loaisp(TenLoai) VALUES ('$insertdulieu') ";
-    $query = mysqli_query($conn, $sql);
+    //sql kiem tra
+    $check_sql = "SELECT * FROM loaisp WHERE TenLoai = '$insertdulieu'";
+    $check_query = mysqli_query($conn, $check_sql);
+    //kt có dữ liệu không
+    if (mysqli_num_rows($check_query) > 0) {
+        $erro =  "Dữ liệu đã tồn tại";
+        echo $erro;
+        exit();
+    } else {
+        $sql = "INSERT INTO loaisp(TenLoai) VALUES ('$insertdulieu') ";
+        $query = mysqli_query($conn, $sql);
+    }
 }
 // edit du lieu
 if (isset($_POST['idloaisp'])) {
     $idloaisp = $_POST['idloaisp'];
     $text = $_POST['text'];
-    $sql = "UPDATE loaisp SET TenLoai='$text' where MaLoai='$idloaisp'";
-    $query = mysqli_query($conn, $sql);
+    //sql kiem tra
+    $check_sql = "SELECT * FROM loaisp WHERE TenLoai = '$text'";
+    $check_query = mysqli_query($conn, $check_sql);
+    //kt có dữ liệu không
+    if (mysqli_num_rows($check_query) > 0) {
+        $erro =  "Dữ liệu đã tồn tại";
+        echo $erro;
+        exit();
+    } else {
+        $sql = "UPDATE loaisp SET TenLoai='$text' where MaLoai='$idloaisp'";
+        $query = mysqli_query($conn, $sql);
+    }
 }
 //delete du lieu
 if (isset($_POST['maloaisp'])) {
@@ -21,7 +41,7 @@ if (isset($_POST['maloaisp'])) {
     $querysp = mysqli_query($conn, $sqlsp);
     $rowsp = mysqli_fetch_array($querysp);
     if ($rowsp > 0) {
-        $erro = "Không thể xóa loại sản phẩm này vì đang tồn tại sản phẩm với mã loại " .$rowsp['MaLoai'];
+        $erro = "Không thể xóa loại sản phẩm này vì đang tồn tại sản phẩm với mã loại " . $rowsp['MaLoai'];
         echo $erro;
         exit();
     } else {

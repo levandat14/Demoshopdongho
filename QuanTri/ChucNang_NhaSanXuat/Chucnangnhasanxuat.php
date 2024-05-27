@@ -4,16 +4,38 @@
     require_once("../ketnoi/ketnoi.php");
     if(isset($_POST['insert'])){
     $insertdulieu=$_POST['insert'];
-    $sql="INSERT INTO nsx(TenNSX) VALUES ('$insertdulieu') ";
-    $query=mysqli_query($conn, $sql);
+    //sql kiem tra
+    $check_sql = "SELECT * FROM nsx WHERE TenNSX = '$insertdulieu'";
+    $check_query = mysqli_query($conn, $check_sql);
+    //kt có dữ liệu không
+    if (mysqli_num_rows($check_query) > 0) {
+        $erro =  "Dữ liệu đã tồn tại";
+        echo $erro;
+        exit();
+    }else{
+    //them du lieu
+        $sql="INSERT INTO nsx(TenNSX) VALUES ('$insertdulieu') ";
+        $query=mysqli_query($conn, $sql);
+        }
     }
+
     //edit du lieu
     if(isset($_POST['idnsx'])){
         $idnsx=$_POST['idnsx'];
         $text=$_POST['text'];
-        $sql="UPDATE nsx SET TenNSX='$text' where MaNSX='$idnsx'";
-        $query=mysqli_query($conn,$sql);
+        //kt có dữ liệu không
+        $check_sql = "SELECT * FROM nsx WHERE TenNSX = '$text'";
+        $check_query = mysqli_query($conn, $check_sql);
+        if (mysqli_num_rows($check_query) > 0) {
+            $erro =  "Dữ liệu đã tồn tại";
+            echo $erro;
+            exit();
+        }else{
+            $sql="UPDATE nsx SET TenNSX='$text' where MaNSX='$idnsx'";
+            $query=mysqli_query($conn,$sql);
+        }
     }
+
     //delete du lieu
     if(isset($_POST['mansx'])){
         $mansx=$_POST['mansx'];

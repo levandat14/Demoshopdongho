@@ -39,8 +39,13 @@
                     method:"post", 
                     data:{idloaisp:idloaisp,text:text},                 
                     success:function(data){
-                    alert('Edit du lieu thanh cong');
-                    load_dulieu_loaisp()
+                        if(data.includes("Dữ liệu đã tồn tại")) {
+                            alert(data);
+                            load_dulieu();
+                        } else {
+                            alert('Edit dữ liệu thành công');
+                            load_dulieu();
+                        }
                     }
                 })
             }
@@ -81,8 +86,13 @@
                     method:"post",
                     data:{themloaisp:themloaisp},
                     success:function(data){
-                        alert('Them du lieu thanh cong');
-                        load_dulieu_loaisp()
+                        if(data.includes("Dữ liệu đã tồn tại")) {
+                            alert(data);
+                            load_dulieu();
+                        } else {
+                            alert('Thêm dữ liệu thành công');
+                            load_dulieu();
+                        }
                     }
                 })
             }else{
