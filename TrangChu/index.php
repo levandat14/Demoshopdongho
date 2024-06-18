@@ -12,25 +12,21 @@ require_once('../ketnoi/ketnoi.php');
     <title>Casio Shop - Website Bán Hàng Trực Tuyến</title>
     <link rel="stylesheet" type="text/css" href="css/trangchu.css" />
     <link rel="stylesheet" type="text/css" href="css/dangnhap.css" />
-    <link rel="stylesheet" type="text/css" href="css/slideshow.css" />
     <link rel="stylesheet" type="text/css" href="css/loc.css">
     <!--bd-->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet" />
     <!-- Custom Fonts -->
-    <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
     <link href="css/font-slider.css" rel="stylesheet" />
     <!-- jQuery and Modernizr-->
     <!-- -->
-    <link href="~/asset/css/icons.min.css" rel="stylesheet" type="text/css">
     <!-- -->
     <script src="css/jquery-2.1.1.js"></script>
     <script src="css/bootstrap.min.js"></script>
-    <script src="ajax/jquery-3.6.0.min.js"></script>
+    <script src="../ajax/jquery-3.6.0.min.js"></script>
     <!--kt-->
-    <script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
-    <script type="text/javascript">
     </script>
 </head>
 
