@@ -151,9 +151,7 @@ $("#timkiem").keypress(function(event) {
                 <!--Quảng cáo-->
 
                 <!--Thống kê-->
-                <?php
-                include_once('./ChucNang_ThongKe/thongke.php');
-                ?>
+
                 <!-- <div class="l-sidebar"></div> -->
             </div>
             <!-- End Left Column -->
