@@ -1,11 +1,5 @@
 <?php
-	$dbHost = 'roundhouse.proxy.rlwy.net';
-	$dbUser = 'root';
-	$dbPassword = 'BjDQDkrAbzTfSyfYLhqNeyljauKFdVyn';
-	$dbName="railway";
-	$dbPort = 48011;
-
-$conn = mysqli_connect($dbHost, $dbUser, $dbPassword, $dbName);
+  require_once("../ketnoi/ketnoi.php");
 if (isset($_GET['timkiem'])) {
     $timkiem = $_GET['timkiem'];
     $sql = "SELECT * FROM sanpham WHERE TenDongHo like '%$timkiem%' OR  BaoHanh like '%$timkiem%' ";
