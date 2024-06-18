@@ -5,7 +5,7 @@ require_once('../ketnoi/ketnoi.php');
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="./css/index.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,8 +21,6 @@ require_once('../ketnoi/ketnoi.php');
     <link href="css/font-awesome.min.css" rel="stylesheet" />
     <link href="css/font-slider.css" rel="stylesheet" />
     <!-- jQuery and Modernizr-->
-    <!-- -->
-    <!-- -->
     <script src="css/jquery-2.1.1.js"></script>
     <script src="css/bootstrap.min.js"></script>
     <script src="../ajax/jquery-3.6.0.min.js"></script>

@@ -2,7 +2,7 @@
 	<h2>thống kê truy cập</h2>
     <div id="counter">
     <?php
-    	$fp='ChucNang_ThongKe/dem.txt';
+    	$fp='SHOPDONGHO/TrangChu/ChucNang_ThongKe/dem.txt';
 		$fo=fopen($fp, 'r');
 		$fr=fread($fo, filesize($fp));
 		$fr++;
