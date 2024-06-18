@@ -23,7 +23,6 @@ require_once('../ketnoi/ketnoi.php');
 					// Mật khẩu đúng, thực hiện đăng nhập
 					$_SESSION['tk'] = $tk;
 					header('location: ../quantri.php');
-					exit(); // Kết thúc quá trình xử lý
 				} else {
 					// Mật khẩu không đúng
 					echo '<script>alert("Mật Khẩu Không Đúng!");</script>';

@@ -11,7 +11,7 @@ body{
 	font-family:Verdana, Geneva, sans-serif;
 	font-size:12px;
 	color:#666;
-	background:url(../anh/bg.gif) top left repeat;
+	background:url(../Img/bg.gif) top left repeat;
 	}	
 	
 /*---------- Wrapper----------*/	
@@ -233,7 +233,7 @@ ul#hotline li span{
 	font-size:15px;
 	font-weight:bold;
 	padding-left:12px;
-	background:url(../anh/icon-menu.png) right center no-repeat;
+	background:url(../Img/icon-menu.png) right center no-repeat;
 	margin-right:12px;
 	}
 	

@@ -49,10 +49,17 @@
                     }
                 })
             }
+            $(document).on('focus', '.tenloaisp', function() {
+                $(this).data('original', $(this).text());
+            });
             $(document).on('blur','.tenloaisp', function(){
                 var idnsx=$(this).data('id');
                 var text=$(this).text();
-                edit_dulieu(idnsx,text)
+                var original=$(this).data('original');
+                if(text !==original){
+                    edit_dulieu(idnsx,text)
+                }
+              
             })
         //     //delete du lieu
             function delete_dulieu(maloaisp){
@@ -106,6 +113,6 @@
 </html>
 <?php
 } else {
-    header("location: ChucNang_DangNhap/Dangnhap.php");
-}
-?>x
+    header('location: ../quantri.php');
+}   
+?>

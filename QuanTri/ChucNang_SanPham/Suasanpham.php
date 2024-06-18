@@ -7,6 +7,7 @@
 <script src="../ckeditor/ckeditor.js"></script>
 <link href="Site.css" rel="stylesheet" />
 <?php
+if($_SESSION['tk']){
 ob_start();
 require_once "../ketnoi/ketnoi.php";
 $sqlloaisp = "SELECT * FROM loaisp ";
@@ -219,3 +220,8 @@ ob_end_flush();
             </div>
         </div>
     </div>
+    <?php 
+}else {
+    header('location: ../quantri.php');
+}
+    ?>

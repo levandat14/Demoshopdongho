@@ -1,4 +1,6 @@
 <?php
+session_start();
+if($_SESSION['tk']){
     include_once('../ketnoi/ketnoi.php');
     $timkiem=$_POST['id'];
     $sql = "SELECT * FROM sanpham WHERE TenDongHo like '%$timkiem%' OR  BaoHanh like '%$timkiem%' ";
@@ -49,5 +51,8 @@
     }
 }else{
     echo 'san pham khong ton tai';
+}
+}else {
+    header('location: ../quantri.php');
 }
 ?>

@@ -1,6 +1,5 @@
 <?php
     include_once('../ketnoi/ketnoi.php');
-    if(isset($_SESSION['tk'])){
     $timkiem=$_POST['id'];
     $sql = "SELECT dh.MaDonHang, dh.MaDongHo, dh.NgayDat, dh.NgayGiao, 
                     dh.SoLuong, dh.TongTien, dh.TinhTrangThanhToan, 
@@ -16,7 +15,7 @@
     if($num>0){
     ?>
      <tr id="prd-bar">
-     <td width="5%">STT</td>
+            <td width="5%">STT</td>
             <td width="5%">Mã đơn hàng</td>
             <td width="20%">Tên Sản Phẩm</td>
             <td width="5%">Tài Khoản Khách Hàng</td>
@@ -26,10 +25,9 @@
             <td width="10%">Tổng Tiền</td>
             <td width="20%">Tình Trạng Thanh Toán</td>
             <td width="5%">Tình Trạng Đơn Hàng</td>
-          
             <td width="5%">Sửa</td>
             <td width="5%">Xóa</td>
-        </tr>
+    </tr>
         <?php
         $number=1;
         while ($row = mysqli_fetch_array($query)) {
@@ -63,7 +61,4 @@
     echo 'san pham khong ton tai';
 }
 
-} else {
-		header('location: ../quantri.php');
-	}
 ?>

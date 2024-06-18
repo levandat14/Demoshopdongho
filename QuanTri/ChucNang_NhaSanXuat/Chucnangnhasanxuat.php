@@ -1,5 +1,7 @@
 
 <?php
+session_start();
+if($_SESSION['tk']){
     //insert du lieu
     require_once("../ketnoi/ketnoi.php");
     if(isset($_POST['insert'])){
@@ -85,5 +87,7 @@
     }
     $loaddulieu .='</table>';
     echo $loaddulieu;
-
+}else {
+    header('location: ../quantri.php');
+}
 ?>

@@ -1,4 +1,5 @@
 <?php
+if($_SESSION['tk']){
 include_once('../ketnoi/ketnoi.php');
 $sql = "SELECT * FROM sanpham ";
 $query = mysqli_query($conn, $sql);
@@ -12,7 +13,7 @@ $query = mysqli_query($conn, $sql);
         background-color:bisque;
     }
 </style>
-<input type="text" class="timkiem" id="timkiem" value="" placeholder="Tim San Pham..."></input>
+<input type="text" class="timkiem" id="timkiem" value="" placeholder="Tìm Sản Phẩm..."></input>
 
 <div id="main">
     <p id="add-prd"><a href="quantri.php?page_layout=themsp"><span style="color: black;">thêm sản phẩm mới</span></a></p>
@@ -57,6 +58,9 @@ $query = mysqli_query($conn, $sql);
             </tr>
         <?php
         }
+    }else {
+		header('location: ../quantri.php');
+	}
         ?>
         <div id="dat"></div>
     </table>

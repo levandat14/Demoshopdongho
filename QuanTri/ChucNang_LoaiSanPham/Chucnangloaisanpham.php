@@ -1,7 +1,9 @@
 
 <?php
+session_start();
 //insert du lieu
 require_once("../ketnoi/ketnoi.php");
+if($_SESSION['tk']){
 if (isset($_POST['themloaisp'])) {
     $insertdulieu = $_POST['themloaisp'];
     //sql kiem tra
@@ -83,4 +85,7 @@ if ($num = mysqli_num_rows($query) > 0) {
 $loaddulieu .= '</table>';
 echo $loaddulieu;
 
+}else {
+    header('location: ../quantri.php');
+}
 ?>

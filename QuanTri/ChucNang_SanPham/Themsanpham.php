@@ -8,6 +8,7 @@
 <link href="Site.css" rel="stylesheet" />
 
 <?php
+if($_SESSION['tk']){
 require_once "../ketnoi/ketnoi.php";
 $sqlloaisp = "SELECT * FROM loaisp ";
 $queryloaisp = mysqli_query($conn, $sqlloaisp);
@@ -189,3 +190,9 @@ $error_anh_sp=null;
         </div>
     </div>
 </form>
+<?php
+}
+else {
+    header('location: ../quantri.php');
+}
+?>
