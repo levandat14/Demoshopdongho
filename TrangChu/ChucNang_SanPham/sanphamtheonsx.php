@@ -50,7 +50,7 @@ while ($row = mysqli_fetch_array($query)) {
 <script>
     $(document).ready(function() {
         $("#sapxep").change(function() {
-            $(".prd-item").hide();
+           
             var sapxep = $(this).val(); 
             var MaNSX = "<?php echo $_GET['MaNSX']; ?>"; 
                 $.ajax({
