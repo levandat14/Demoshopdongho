@@ -51,9 +51,6 @@ while ($row = mysqli_fetch_array($query)) {
 
 <script>
     $(document).ready(function() {
-        // Ẩn tất cả các phần tử .prd-item ban đầu
-
-
         // Sự kiện thay đổi của .lesapxepp
         $(".lesapxepp").change(function() {
             $(".prd-item").hide();

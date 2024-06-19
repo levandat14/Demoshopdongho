@@ -1,12 +1,5 @@
 <?php
-	$dbHost = 'roundhouse.proxy.rlwy.net';
-	$dbUser = 'root';
-	$dbPassword = 'BjDQDkrAbzTfSyfYLhqNeyljauKFdVyn';
-	$dbName="railway";
-	$dbPort = 48011;
-
-	$conn = mysqli_connect($dbHost,$dbUser,$dbPassword,$dbName,$dbPort);
-
+require_once("../ketnoi/ketnoi.php");
 
 if (isset($_POST['sapxep'])) {
     $sapxep = $_POST['sapxep'];
@@ -14,7 +7,7 @@ if (isset($_POST['sapxep'])) {
     $loaddulieu = '';
     switch ($sapxep) {
         case '1':
-            $sql = "SELECT * FROM sanpham WHERE MaNSX = '$MaNSX' ORDER BY GiaBan ASC";
+            $sql = "SELECT * FROM sanpham WHERE MaNSX = '$MaNSX' ORDER BY GiaBan DESC";
             $query = mysqli_query($conn, $sql);
 ?>
             <div class="pr-list">
@@ -31,7 +24,7 @@ if (isset($_POST['sapxep'])) {
                 }
                 break;
             case '2':
-                $sql = "SELECT * FROM sanpham WHERE MaNSX = '$MaNSX' ORDER BY GiaBan DESC";
+                $sql = "SELECT * FROM sanpham WHERE MaNSX = '$MaNSX' ORDER BY GiaBan ASC";
                 $query = mysqli_query($conn, $sql);
                 ?>
                 <div class="pr-list">

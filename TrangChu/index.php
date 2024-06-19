@@ -4,6 +4,7 @@ require_once('../ketnoi/ketnoi.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link href="css/index.css" rel="stylesheet" />
     <meta charset="UTF-8">
@@ -43,7 +44,7 @@ require_once('../ketnoi/ketnoi.php');
                                                                                     } ?></span></button>
                         <div class="dropdown-content">
                             <p><a href="index.php?page_layout=thongtin">Thông Tin Của Bạn</a></p>
-                            <p><a href="index.php?page_layout=donhang">Đơn hàng Của Bạn (<?php  include_once("./ThongTinTaiKhoan/Countdonhang.php"); ?>)</a></p>
+                            <p><a href="index.php?page_layout=donhang">Đơn hàng Của Bạn (<?php include_once("./ThongTinTaiKhoan/Countdonhang.php"); ?>)</a></p>
                             <p><a href="index.php?page_layout=dangxuat">Đăng Xuất</a></p>
                         </div>
                     </div>
@@ -86,56 +87,66 @@ require_once('../ketnoi/ketnoi.php');
                                                                                                                 ?>)</b>
 
                                 </a></li>
-                            <input type="text" style="background-color: bisque;" id="timkiem" value="" placeholder="Tim San Pham..."></input>
-                            <div id="search" ></div>
+                            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+                            <!-- The form -->
+                            <form id="searchForm" class="example">
+                                <input type="text" style="background-color: bisque;"  id="timkiem" placeholder="Search.." name="search">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                            <div id="search"></div>
                         </ul>
                     </div>
         </div>
         <!-- ajax tìm kiếm -->
         <script>
-// $("#timkiem").keyup(function(event) {
-//     var timkiem = $(this).val();
-//     if (timkiem.trim() === '') {
-//         // Nếu ô input trống, ẩn dữ liệu
-//         $("#search").html('');
-//     } else {
-//         // Nếu có kí tự được nhập vào ô input, thực hiện tìm kiếm và hiển thị dữ liệu
-//         $.ajax({
-//             url: "ChucNang_TimKiem/Timkiemsanpham.php",
-//             method: "POST",
-//             data: {id: timkiem},
-//             success: function(data) {
-//                 $("#search").html(data);
-//             }
-//         });
-//     }
-// });
-
-$("#timkiem").keypress(function(event) {
-    if (event.keyCode === 13) { // Kiểm tra nếu phím được nhấn là phím "Enter"
-        var timkiem = $(this).val();
-        if (timkiem.trim() !== '') {
-            // Gửi dữ liệu tìm kiếm lên server bằng Ajax
-            $.ajax({
+            // bắt sự kiện nút button
+            $("#searchForm").on('submit', function(event) {
+            event.preventDefault(); // Ngăn chặn hành vi submit mặc định của form
+            var timkiem = $("#timkiem").val();
+            if (timkiem.trim() !== '') {
+                // Gửi dữ liệu tìm kiếm lên server bằng Ajax
+                $.ajax({
                 url: "ChucNang_TimKiem/Timkiemtheosanpham.php",
                 method: "POST",
-                data: {id: timkiem},
+                data: { id: timkiem },
                 success: function(data) {
                     // Xử lý kết quả trả về từ server
                     // Sau khi nhận được kết quả, chuyển hướng trang đến trang khác với dữ liệu tìm kiếm
                     window.location.href = "index.php?page_layout=timkiemtheosanpham&timkiem=" + encodeURIComponent(timkiem);
                 }
+                });
+            } else {
+                alert("Từ khóa bắt buộc!"); // Hiển thị thông báo nếu ô tìm kiếm rỗng
+            }
             });
-        }
-        return false; // Ngăn chặn việc submit form mặc định
-    }
-});
-
-
-
-
-
-  </script>
+             // bắt sự kiện nút enter
+            $("#timkiem").keypress(function(event) {
+                if (event.keyCode === 13) { // Kiểm tra nếu phím được nhấn là phím "Enter"
+                    event.preventDefault(); // Ngăn chặn hành vi submit mặc định của form
+                    var timkiem = $(this).val();
+                    if (timkiem.trim() !== '') {
+                        // Gửi dữ liệu tìm kiếm lên server bằng Ajax
+                        $.ajax({
+                            url: "ChucNang_TimKiem/Timkiemtheosanpham.php",
+                            method: "POST",
+                            data: {
+                                id: timkiem
+                            },
+                            success: function(data) {
+                                // Xử lý kết quả trả về từ server
+                                // Sau khi nhận được kết quả, chuyển hướng trang đến trang khác với dữ liệu tìm kiếm
+                                window.location.href = "index.php?page_layout=timkiemtheosanpham&timkiem=" + encodeURIComponent(timkiem);
+                            }
+                        });
+                    }
+                    else {
+                        alert("Từ khóa bắt buộc!"); // Hiển thị thông báo nếu ô tìm kiếm rỗng
+                         }
+                        return false; // Ngăn chặn việc submit form mặc định
+                }
+            });
+        </script>
         <!-- Body -->
         <div id="body">
             <!-- Left Column -->
@@ -168,6 +179,7 @@ $("#timkiem").keypress(function(event) {
                 <script>
                     var myIndex = 0;
                     carousel();
+
                     function carousel() {
                         var i;
                         var x = document.getElementsByClassName("mySlides");
