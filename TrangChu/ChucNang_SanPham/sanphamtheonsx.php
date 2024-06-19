@@ -20,7 +20,7 @@ $rownsx = mysqli_fetch_array($querynsx);
                 <?php
                 echo $rownsx['TenNSX'];
                 ?>
-                <select class="lesapxepp" name="sapxep">
+                <select class="lesapxepp" id="sapxep" name="sapxep">
                     <option value="0" selected>---Lọc---</option>
                     <option value="1">Gía Cao Tới Thấp</option>
                     <option value="2">Gía Thấp Tới Cao</option>
@@ -33,12 +33,10 @@ $rownsx = mysqli_fetch_array($querynsx);
     <div class="result"></div>
 
     <?php
-// Kết nối CSDL và thực hiện truy vấn
 $MaNSX = $_GET['MaNSX'];
 $sql = "SELECT * FROM sanpham WHERE MaNSX = '$MaNSX' ORDER BY MaDongHo ASC";
 $query = mysqli_query($conn, $sql);
 
-// Tạo HTML từ dữ liệu truy vấn
 while ($row = mysqli_fetch_array($query)) {
     echo '<div class="prd-item">';
     echo '<a href="index.php?page_layout=Chitietsp&MaDongHo=' . $row['MaDongHo'] . '">';
@@ -51,16 +49,10 @@ while ($row = mysqli_fetch_array($query)) {
 
 <script>
     $(document).ready(function() {
-        // Sự kiện thay đổi của .lesapxepp
-        $(".lesapxepp").change(function() {
+        $("#sapxep").change(function() {
             $(".prd-item").hide();
-            var sapxep = $(this).val(); // Lấy giá trị của tùy chọn đã chọn
-            var MaNSX = "<?php echo $_GET['MaNSX']; ?>"; // Lấy giá trị MaNSX từ PHP
-                load_dulieu(sapxep, MaNSX); // Gọi hàm load_dulieu với các tham số đã lấy được
-                
-            });
-
-            function load_dulieu(sapxep, MaNSX) {
+            var sapxep = $(this).val(); 
+            var MaNSX = "<?php echo $_GET['MaNSX']; ?>"; 
                 $.ajax({
                     url: "ChucNang_SanPham/xulysapxep.php",
                     method: "POST",
@@ -69,10 +61,10 @@ while ($row = mysqli_fetch_array($query)) {
                         MaNSX: MaNSX
                     },
                     success: function(data) {
-                        $(".result").html(data); // Thay đổi nội dung của phần tử có class là "result"
+                        $(".result").html(data); 
                     }
                 });
-            }
+            });
         });
     </script>
 </div>

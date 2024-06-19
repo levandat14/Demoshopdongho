@@ -9,26 +9,19 @@ require_once('../ketnoi/ketnoi.php');
 		if(isset($_POST['submit'])){
 			$tk = $_POST['tk'];
 			$mk = $_POST['mk'];
-		
-			// Truy vấn tên đăng nhập và mật khẩu đã băm từ cơ sở dữ liệu
 			$sql = "SELECT MatKhau FROM admin WHERE TenDangNhap='$tk'";
 			$query = mysqli_query($conn, $sql);
 		
 			if ($query && mysqli_num_rows($query) > 0) {
 				$row = mysqli_fetch_assoc($query);
 				$hashed_password_from_db = $row['MatKhau']; // Lấy mật khẩu đã băm từ cơ sở dữ liệu
-		
-				// Kiểm tra xem mật khẩu nhập vào có khớp với mật khẩu đã băm không
-				if (password_verify($mk, $hashed_password_from_db)) {
-					// Mật khẩu đúng, thực hiện đăng nhập
+				if (password_verify($mk, $hashed_password_from_db)) { // so sánh mật khẩu
 					$_SESSION['tk'] = $tk;
 					header('location: ../quantri.php');
 				} else {
-					// Mật khẩu không đúng
 					echo '<script>alert("Mật Khẩu Không Đúng!");</script>';
 				}
 			} else {
-				// Không tìm thấy tên đăng nhập trong cơ sở dữ liệu
 				echo '<script>alert("Tên Đăng Nhập Không Tồn Tại!");</script>';
 			}
 		}

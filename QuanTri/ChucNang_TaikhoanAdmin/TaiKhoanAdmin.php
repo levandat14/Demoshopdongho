@@ -26,11 +26,10 @@ while ($row = mysqli_fetch_array($query)) {
             <td><span>'.$number.'</span></td>
             <td  data-id='.$row['ID'].' class="l5 tenloaisp"><h3>'.$row['TenDangNhap'].'</h3></td>';
 
-        // Kiểm tra nếu MaLoai là 1 thì không hiển thị nút xóa
         if ($row['LoaiTK'] != 1) {
             $loaddulieu .= '<td><span><input type="submit" class="btnxoa" data-id='.$row['ID'].' value="Xóa"></input></span></td>';
         } else {
-            $loaddulieu .= '<td></td>'; // Nếu MaLoai là 1, không có nút xóa, để ô trống
+            $loaddulieu .= '<td></td>'; 
         }
 
 $loaddulieu .= '</tr>';

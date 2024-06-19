@@ -102,31 +102,26 @@ require_once('../ketnoi/ketnoi.php');
         <script>
             // bắt sự kiện nút button
             $("#searchForm").on('submit', function(event) {
-            event.preventDefault(); // Ngăn chặn hành vi submit mặc định của form
+            event.preventDefault();
             var timkiem = $("#timkiem").val();
             if (timkiem.trim() !== '') {
-                // Gửi dữ liệu tìm kiếm lên server bằng Ajax
                 $.ajax({
                 url: "ChucNang_TimKiem/Timkiemtheosanpham.php",
                 method: "POST",
                 data: { id: timkiem },
                 success: function(data) {
-                    // Xử lý kết quả trả về từ server
-                    // Sau khi nhận được kết quả, chuyển hướng trang đến trang khác với dữ liệu tìm kiếm
-                    window.location.href = "index.php?page_layout=timkiemtheosanpham&timkiem=" + encodeURIComponent(timkiem);
+                 window.location.href = "index.php?page_layout=timkiemtheosanpham&timkiem=" + encodeURIComponent(timkiem);
                 }
                 });
             } else {
-                alert("Từ khóa bắt buộc!"); // Hiển thị thông báo nếu ô tìm kiếm rỗng
+                alert("Từ khóa bắt buộc!"); 
             }
             });
              // bắt sự kiện nút enter
             $("#timkiem").keypress(function(event) {
-                if (event.keyCode === 13) { // Kiểm tra nếu phím được nhấn là phím "Enter"
-                    event.preventDefault(); // Ngăn chặn hành vi submit mặc định của form
-                    var timkiem = $(this).val();
+                if (event.keyCode === 13) { 
+                    event.preventDefault(); 
                     if (timkiem.trim() !== '') {
-                        // Gửi dữ liệu tìm kiếm lên server bằng Ajax
                         $.ajax({
                             url: "ChucNang_TimKiem/Timkiemtheosanpham.php",
                             method: "POST",
@@ -134,16 +129,13 @@ require_once('../ketnoi/ketnoi.php');
                                 id: timkiem
                             },
                             success: function(data) {
-                                // Xử lý kết quả trả về từ server
-                                // Sau khi nhận được kết quả, chuyển hướng trang đến trang khác với dữ liệu tìm kiếm
-                                window.location.href = "index.php?page_layout=timkiemtheosanpham&timkiem=" + encodeURIComponent(timkiem);
+                               window.location.href = "index.php?page_layout=timkiemtheosanpham&timkiem=" + encodeURIComponent(timkiem);
                             }
                         });
                     }
                     else {
-                        alert("Từ khóa bắt buộc!"); // Hiển thị thông báo nếu ô tìm kiếm rỗng
+                        alert("Từ khóa bắt buộc!"); 
                          }
-                        return false; // Ngăn chặn việc submit form mặc định
                 }
             });
         </script>
@@ -163,11 +155,7 @@ require_once('../ketnoi/ketnoi.php');
 
                 <!--Thống kê-->
 
-                <!-- <div class="l-sidebar"></div> -->
             </div>
-            <!-- End Left Column -->
-
-            <!-- Right Column -->
             <div id="r-col">
                 <!--slideshow-->
                 <div class="w3-content w3-section" style="max-width:720px">

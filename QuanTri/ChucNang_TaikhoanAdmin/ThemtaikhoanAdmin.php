@@ -11,16 +11,13 @@ if(isset($_POST['btnsubmit'])){
     $check_sql = "SELECT * FROM admin WHERE TenDangNhap = '$tk'";
     $check_query = mysqli_query($conn, $check_sql);
     
-    // Nếu không có bản ghi nào được trả về, có nghĩa là tài khoản chưa tồn tại
     if(mysqli_num_rows($check_query) == 0){
-        // Thêm tài khoản vào cơ sở dữ liệu
         $sql = "INSERT INTO admin (TenDangNhap, MatKhau) VALUES ('$tk', '$hashed_password')";
         $query=mysqli_query($conn, $sql);
         echo '<script type="text/javascript">';
         echo 'window.location.href="quantri.php?page_layout=dangkitkadmin";';
         echo '</script>';
     } else {
-        // Nếu tài khoản đã tồn tại, hiển thị thông báo cho người dùng
         echo '<script>alert("Tài khoản đã tồn tại.");</script>';
     }
 }
