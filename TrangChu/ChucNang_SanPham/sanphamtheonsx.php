@@ -48,11 +48,15 @@ while ($row = mysqli_fetch_array($query)) {
 ?>
 
 <script>
-    $(document).ready(function() {
-        $("#sapxep").change(function() {
-           
+    $("#sapxep").ready(function() {
+        $(".lesapxepp").change(function() {
+            $(".prd-item").hide();
             var sapxep = $(this).val(); 
             var MaNSX = "<?php echo $_GET['MaNSX']; ?>"; 
+                load_dulieu(sapxep, MaNSX); 
+            });
+
+            function load_dulieu(sapxep, MaNSX) {
                 $.ajax({
                     url: "ChucNang_SanPham/xulysapxep.php",
                     method: "POST",
@@ -64,7 +68,7 @@ while ($row = mysqli_fetch_array($query)) {
                         $(".result").html(data); 
                     }
                 });
-            });
+            }
         });
     </script>
 </div>
