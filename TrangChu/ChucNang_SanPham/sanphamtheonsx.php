@@ -1,3 +1,4 @@
+<script src="../ajax/jquery-3.6.0.min.js"></script>
 <?php
 require_once("../ketnoi/ketnoi.php");
 $MaNSX = $_GET['MaNSX'];

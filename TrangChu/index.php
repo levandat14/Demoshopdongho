@@ -24,6 +24,7 @@ require_once('../ketnoi/ketnoi.php');
     <!-- jQuery and Modernizr-->
     <script src="css/jquery-2.1.1.js"></script>
     <script src="css/bootstrap.min.js"></script>
+    <!-- ajax-->
     <script src="../ajax/jquery-3.6.0.min.js"></script>
     <!--kt-->
     </script>
@@ -121,6 +122,7 @@ require_once('../ketnoi/ketnoi.php');
             $("#timkiem").keypress(function(event) {
                 if (event.keyCode === 13) { 
                     event.preventDefault(); 
+                    var timkiem = $("#timkiem").val();
                     if (timkiem.trim() !== '') {
                         $.ajax({
                             url: "ChucNang_TimKiem/Timkiemtheosanpham.php",
