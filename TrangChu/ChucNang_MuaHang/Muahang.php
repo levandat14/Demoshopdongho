@@ -23,21 +23,44 @@ if (isset($_SESSION['tkc'])) {
         
         //Xử lý phần mua hàng
         if (isset($_POST['submit'])) {
-
             while($rowdh=mysqli_fetch_array($query)){
                 $madonghodh=$rowdh['MaDongHo'];
                 $ngaydathang = date("Y-m-d H:i:s");
                 $sldh=$_SESSION['giohang'][$rowdh['MaDongHo']];
                 $Tongtiendh = $_SESSION['giohang'][$rowdh['MaDongHo']] * $rowdh['GiaBan'];
-                //thêm dữ liệu vào bảng đơn hàng
-                $sql_insert = "INSERT INTO donhang (MaDongHo, MaKH, NgayDat, SoLuong, TongTien)
-                VALUES ('$madonghodh', '$makh', '$ngaydathang', '$sldh', '$Tongtiendh')";
-                mysqli_query($conn, $sql_insert);
+                //số lượng tồn
+                $soluongton=$rowdh['SoLuong'];
+                if ($soluongton <= 0) {
+                    echo '<script>
+                            alert("Số lượng sản phẩm trong kho đã hết!");
+                            window.location.href="index.php";
+                          </script>';
+                } else if ($soluongton < $sldh) {
+                    echo '<script>
+                            alert("Số lượng sản phẩm trong kho không đủ!");
+                            window.location.href="index.php";
+                          </script>';
+                } else {
+                    // Thêm dữ liệu vào bảng đơn hàng
+                    $sql_insert = "INSERT INTO donhang (MaDongHo, MaKH, NgayDat, SoLuong, TongTien)
+                                   VALUES ('$madonghodh', '$makh', '$ngaydathang', '$sldh', '$Tongtiendh')";
+
+                    if (mysqli_query($conn, $sql_insert)) {
+                        // Sửa số lượng tồn
+                        $sql_edit = "UPDATE sanpham SET SoLuong = SoLuong - $sldh WHERE MaDongHo = '$madonghodh'";
+                        if (mysqli_query($conn, $sql_edit)) {
+                            unset($_SESSION['giohang']);
+                            echo '<script>alert("Qúy khách đã đặt hàng thành công, đơn vị vận chuyển sẽ giao đến cho quý khách trong thời gian sớm nhất");
+                                window.location.href="index.php";
+                                </script>';
+                        }
+                    } else {
+                        echo '<script>alert("Lỗi khi thêm đơn hàng:");
+                        window.location.href="index.php";
+                        </script>' . mysqli_error($conn);
+                    }
+                }
             }
-            unset($_SESSION['giohang']);
-            echo '<script>alert("Qúy khách đã đặt hàng thành công, đơn vị vận chuyển sẽ giao đến cho quý khách trong thời gian sớm nhất");
-                window.location.href="index.php";
-                </script>';
         }
 
           //Hiển thị danh sách sản phẩm

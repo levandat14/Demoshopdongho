@@ -21,7 +21,7 @@ if (isset($_SESSION['tk'])) {
             <div id="header">
                 <div id="navbar">
                     <ul>
-                        <li id="admin-home"><a href="quantri.php">trang chủ quản trị</a></li>
+                        <li id="admin-home"><a href="quantri.php?page_layout=doanhthu">Doanh Thu</a></li>
                         <li><a href="quantri.php?page_layout=nsx">Nhà Sản Xuất</a></li>
                         <li><a href="quantri.php?page_layout=loaisp">Loai sản phẩm</a></li>
                         <li><a href="quantri.php?page_layout=danhsachsp">sản phẩm</a></li>
@@ -77,9 +77,12 @@ if (isset($_SESSION['tk'])) {
                         case 'chitietdonhang':
                             include_once('./ChucNang_DonHang/Chitietdonhang.php');
                             break;
+                        case 'doanhthu':
+                            include_once('./ChucNang_DoanhThu/Thongkedoanhthu.php');
+                            break;
                     }
                 } else {
-                    include_once('gioithieu.php');
+                    include_once('./ChucNang_DoanhThu/Thongkedoanhthu.php');
                 }
                 ?>
 

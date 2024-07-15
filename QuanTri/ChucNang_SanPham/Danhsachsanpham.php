@@ -1,6 +1,6 @@
 <?php
 if($_SESSION['tk']){
-include_once('../ketnoi/ketnoi.php');
+require_once('../ketnoi/ketnoi.php');
 $sql = "SELECT * FROM sanpham ";
 $query = mysqli_query($conn, $sql);
 ?>
