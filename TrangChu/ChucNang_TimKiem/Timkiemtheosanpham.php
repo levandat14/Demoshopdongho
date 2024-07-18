@@ -12,7 +12,7 @@ if (isset($_GET['timkiem'])) {
         $str = preg_replace("/( )/", "", $str); // Loại bỏ khoảng cách
         return $str;
     }  
-    $timkiem = $_GET['timkiem'];
+    $timkiem = $_GET['timkiem'];  
     $timkiem=convert_vi_to_en($timkiem);
     $sql = "SELECT * FROM sanpham WHERE 
     LOWER(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(TenDongHo, 'á', 'a'), 'à', 'a'), 'ả', 'a'), 'ạ', 'a'), 'ã', 'a'), 'ă', 'a'), 'ắ', 'a'), 'ằ', 'a'), 'ẳ', 'a'), 'ặ', 'a'), 'ẵ', 'a')) LIKE '%$timkiem%' 
