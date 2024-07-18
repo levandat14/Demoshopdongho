@@ -11,7 +11,7 @@ if (isset($_GET['timkiem'])) {
         $str = preg_replace("/(đ)/", "d", $str);
         $str = preg_replace("/( )/", "", $str); // Loại bỏ khoảng cách
         return $str;
-    }
+    }  
     $timkiem = $_GET['timkiem'];
     $timkiem=convert_vi_to_en($timkiem);
     $sql = "SELECT * FROM sanpham WHERE 
