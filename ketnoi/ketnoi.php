@@ -1,9 +1,9 @@
 <?php
-	$dbHost = 'roundhouse.proxy.rlwy.net';
+	$dbHost = 'mysql.railway.internal';
 	$dbUser = 'root';
-	$dbPassword = 'BjDQDkrAbzTfSyfYLhqNeyljauKFdVyn';
+	$dbPassword = 'iGyDcTZVYGaufsyFwAlyxyObqYzRvxoM';
 	$dbName="railway";
-	$dbPort = 48011;
+	$dbPort = 3306;
 
 	$conn = mysqli_connect($dbHost,$dbUser,$dbPassword,$dbName,$dbPort);
 
