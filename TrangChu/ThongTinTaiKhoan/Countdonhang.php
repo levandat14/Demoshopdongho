@@ -1,5 +1,5 @@
 <?php
-require_once "../ketnoi/ketnoi.php";
+require_once __DIR__ . '/../../ketnoi/ketnoi.php';
 $tkc=$_SESSION['tkc'];
 $sql=("SELECT dh.MaDonHang, dh.MaDongHo 
 FROM donhang dh

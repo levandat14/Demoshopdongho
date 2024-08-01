@@ -1,5 +1,5 @@
 <?php
-    include_once('../ketnoi/ketnoi.php');
+require_once __DIR__ . '/../../ketnoi/ketnoi.php';
     $timkiem=$_POST['id'];
     $sql = "SELECT dh.MaDonHang, dh.MaDongHo, dh.NgayDat, dh.NgayGiao, 
                     dh.SoLuong, dh.TongTien, dh.TinhTrangThanhToan, 

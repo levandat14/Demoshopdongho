@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
 <?php
-require_once "../ketnoi/ketnoi.php";
+require_once __DIR__ . '/../../ketnoi/ketnoi.php';
 if(isset($_SESSION['tk'])){
 $sqldh = "SHOW COLUMNS FROM donhang WHERE Field = 'TinhTrangDonHang'";
 $querydh = mysqli_query($conn, $sqldh);

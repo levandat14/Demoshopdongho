@@ -9,7 +9,7 @@
 
 <?php
 if($_SESSION['tk']){
-require_once "../ketnoi/ketnoi.php";
+    require_once __DIR__ . '/../../ketnoi/ketnoi.php';
 $sqlloaisp = "SELECT * FROM loaisp ";
 $queryloaisp = mysqli_query($conn, $sqlloaisp);
 ?>

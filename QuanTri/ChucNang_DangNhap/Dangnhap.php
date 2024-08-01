@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once('../ketnoi/ketnoi.php');
+require_once __DIR__ . '/../../ketnoi/ketnoi.php';
 
 ?>
 <?php

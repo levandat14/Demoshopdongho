@@ -1,5 +1,5 @@
 <?php
-    require_once("../ketnoi/ketnoi.php");
+    require_once __DIR__ . '/../../ketnoi/ketnoi.php';
   $sql = "SELECT * FROM sanpham WHERE KhuyenMai !=0 ";
     $query = mysqli_query($conn, $sql);
 ?>

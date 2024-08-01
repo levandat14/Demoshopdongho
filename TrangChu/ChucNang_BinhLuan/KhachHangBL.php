@@ -1,6 +1,6 @@
 <?php
  
-include_once('../ketnoi/ketnoi.php');
+    require_once __DIR__ . '/../../ketnoi/ketnoi.php';
     if(isset($_POST['btnsubmit'])){
         if(!isset($_SESSION['tkc'])){
         echo '<script>alert("Bạn cần đăng nhập để sử dụng chức năng này!");</script>';

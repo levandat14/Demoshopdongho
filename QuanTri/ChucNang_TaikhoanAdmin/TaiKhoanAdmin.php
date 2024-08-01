@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="css/danhsachsp.css" />
 
 <?php   
-    require_once("../ketnoi/ketnoi.php");
+    require_once __DIR__ . '/../../ketnoi/ketnoi.php';
     //delete du lieu
     if(isset($_POST['idtaikhoan'])){
         $idtaikhoan=$_POST['idtaikhoan'];

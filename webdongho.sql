@@ -3,10 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2024 at 06:38 PM
+-- Generation Time: Jul 26, 2024 at 02:44 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
-
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -66,7 +65,7 @@ CREATE TABLE `donhang` (
 --
 
 INSERT INTO `donhang` (`MaDonHang`, `MaDongHo`, `MaKH`, `NgayDat`, `NgayGiao`, `SoLuong`, `TongTien`, `TinhTrangThanhToan`, `TinhTrangDonHang`) VALUES
-(57, 5, 70, '2024-04-18 16:41:59', NULL, 1, 650000, 'Chưa thanh toán', 'Đã đóng gói');
+(57, 5, 70, '2024-05-23 17:54:56', '2024-05-12', 1, 650000, 'Chưa thanh toán', 'Đã đóng gói');
 
 -- --------------------------------------------------------
 

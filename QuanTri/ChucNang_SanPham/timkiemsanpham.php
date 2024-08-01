@@ -1,7 +1,7 @@
 <?php
 session_start();
 if($_SESSION['tk']){
-    include_once('../ketnoi/ketnoi.php');
+    require_once __DIR__ . '/../../ketnoi/ketnoi.php';
     $timkiem=$_POST['id'];
     $sql = "SELECT * FROM sanpham WHERE TenDongHo like '%$timkiem%' OR  BaoHanh like '%$timkiem%' ";
 

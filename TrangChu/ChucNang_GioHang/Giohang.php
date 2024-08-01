@@ -1,5 +1,5 @@
 <?php
-require_once("../ketnoi/ketnoi.php");
+require_once __DIR__ . '/../../ketnoi/ketnoi.php';
 ?>
 <link rel="stylesheet" type="text/css" href="css/giohang.css" />
 <div class="prd-block">

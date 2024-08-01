@@ -2,7 +2,7 @@
 <div class="prd-block">
     <div class="prd-only"> 
         <?php
-        require_once("../ketnoi/ketnoi.php");
+        require_once __DIR__ . '/../../ketnoi/ketnoi.php';
         $MaDongHo = $_GET['MaDongHo'];
         $sql = "SELECT * FROM sanpham WHERE MaDongHo = $MaDongHo";
         $query = mysqli_query($conn, $sql);

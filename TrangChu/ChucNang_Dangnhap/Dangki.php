@@ -7,7 +7,7 @@
 
   <link href="css/style.css" rel="stylesheet" />
   <?php
-    require_once("../ketnoi/ketnoi.php");
+    require_once __DIR__ . '/../../ketnoi/ketnoi.php';
     $error_xacnhanmatkhau = null;
     $error_taikhoan =null;
     if (isset($_POST['btnsubmit'])) {

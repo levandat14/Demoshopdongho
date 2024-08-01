@@ -3,7 +3,7 @@
 session_start();
 if($_SESSION['tk']){
     //insert du lieu
-    require_once("../ketnoi/ketnoi.php");
+    require_once __DIR__ . '/../../ketnoi/ketnoi.php';
     if(isset($_POST['insert'])){
     $insertdulieu=$_POST['insert'];
     //sql kiem tra

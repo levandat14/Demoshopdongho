@@ -1,6 +1,6 @@
 <?php
 
-    include_once('../ketnoi/ketnoi.php');
+    require_once __DIR__ . '/../../ketnoi/ketnoi.php';
     $MaDongHo=$_GET['MaDongHo'];
     $sqlbl="SELECT * FROM binhluan WHERE MaDongHo = $MaDongHo";
     $querybl = mysqli_query($conn, $sqlbl);

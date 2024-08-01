@@ -1,6 +1,6 @@
 <?php
 if($_SESSION['tk']){
-require_once "../ketnoi/ketnoi.php";
+require_once __DIR__ . '/../../ketnoi/ketnoi.php';
 $masp=$_GET['masp'];
 $sql="DELETE FROM sanpham WHERE MaDongHo='$masp' ";
 $query=mysqli_query($conn, $sql);

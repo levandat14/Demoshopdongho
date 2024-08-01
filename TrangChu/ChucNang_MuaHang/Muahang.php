@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="css/muahang.css" />
 <?php
-require_once "../ketnoi/ketnoi.php";
+require_once __DIR__ . '/../../ketnoi/ketnoi.php';
 if (isset($_SESSION['tkc'])) {
     $kh = $_SESSION['tkc'];
     $sqlkh = "SELECT * FROM khachhang WHERE TaiKhoan='$kh'";

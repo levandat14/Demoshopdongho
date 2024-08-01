@@ -1,5 +1,5 @@
 <?php
-require_once("../ketnoi/ketnoi.php");
+require_once __DIR__ . '/../../ketnoi/ketnoi.php';
 $MaLoai = $_GET['MaLoai'];
 $sql = "SELECT * FROM sanpham WHERE MaLoai = $MaLoai ";
 $query = mysqli_query($conn, $sql);

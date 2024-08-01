@@ -2,7 +2,7 @@
 <?php
 session_start();
 //insert du lieu
-require_once("../ketnoi/ketnoi.php");
+require_once __DIR__ . '/../../ketnoi/ketnoi.php';
 if($_SESSION['tk']){
 if (isset($_POST['themloaisp'])) {
     $insertdulieu = $_POST['themloaisp'];

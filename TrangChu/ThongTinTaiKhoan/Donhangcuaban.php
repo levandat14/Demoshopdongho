@@ -1,5 +1,5 @@
 <?php
-require_once "../ketnoi/ketnoi.php";
+require_once __DIR__ . '/../../ketnoi/ketnoi.php';
 ?>
 
 <link rel="stylesheet" type="text/css" href="css/giohang.css" />
@@ -11,7 +11,8 @@ if (isset($tkc)) {
     $sql = "SELECT dh.MaDongHo, sp.TenDongHo, sp.HinhAnh, kh.MaKH, dh.NgayDat, dh.NgayGiao, dh.SoLuong, dh.TongTien, dh.TinhTrangDonHang, dh.TinhTrangThanhToan
     FROM donhang dh
     INNER JOIN sanpham sp ON sp.MaDongHo = dh.MaDongHo
-    INNER JOIN (SELECT * FROM khachhang WHERE TaiKhoan = '$tkc') kh ON kh.MaKH = dh.MaKH";
+    INNER JOIN (SELECT * FROM khachhang WHERE TaiKhoan = '$tkc') kh ON kh.MaKH = dh.MaKH
+    ORDER BY dh.ngaydat DESC";
 
     $query = mysqli_query($conn, $sql);
 

@@ -1,6 +1,6 @@
 <script src="../ajax/jquery-3.6.0.min.js"></script>
 <?php
-require_once("../ketnoi/ketnoi.php");
+require_once __DIR__ . '/../../ketnoi/ketnoi.php';
 
 if (isset($_POST['sapxep'])) {
     $sapxep = $_POST['sapxep'];

@@ -1,5 +1,5 @@
 <?php
-  require_once("../ketnoi/ketnoi.php");
+  require_once __DIR__ . '/../../ketnoi/ketnoi.php';
 if (isset($_GET['timkiem'])) {
     function convert_vi_to_en($str) {
         $str = preg_replace("/(á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ặ|ẵ|â|ấ|ầ|ẩ|ậ|ẫ)/", "a", $str);
